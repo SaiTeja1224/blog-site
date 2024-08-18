@@ -2,32 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    @apply dark:bg-neutral-900 bg-stone-200 dark:text-stone-200 text-stone-900;
+    min-height: 100vh;
+    min-height: 100svh;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(161 161 170 / 0.7) rgb(63 63 70 / 0.5);
+    scrollbar-gutter: "stable";
   }
-}
+  ::-webkit-scrollbar {
+    width: 12px; /* Width of the entire scrollbar */
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  ::-webkit-scrollbar-track {
+    @apply dark:bg-stone-700/50;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply dark:bg-stone-400/70;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply dark:bg-stone-400;
+  }
 }
 
 @layer utilities {
+  .base-container {
+    @apply lg:max-w-[50%] max-w-[90%] mx-auto;
+  }
+  .base-bg {
+    @apply dark:bg-stone-900;
+  }
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* MARKDOWN CLASSES */
+
+.yt-link {
+  @apply min-w-full h-[450px] text-orange-500;
 }
