@@ -1,4 +1,4 @@
-import BlogItem from "./PostItem";
+import PostItem from "./PostItem";
 import { Post } from "@/lib/types/contentful";
 
 function PostsList({ posts }: { posts: Post[] }) {
@@ -6,7 +6,7 @@ function PostsList({ posts }: { posts: Post[] }) {
     <article>
       <ul className="space-y-5">
         {posts.map((post) => {
-          return <BlogItem key={post.slug} post={post} />;
+          return <PostItem key={post.slug} post={post} />;
         })}
       </ul>
     </article>

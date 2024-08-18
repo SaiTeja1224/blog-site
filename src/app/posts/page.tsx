@@ -1,15 +1,8 @@
-import FilterPosts from "@/components/FilterPosts";
-import {
-  getCategories,
-  getPostsSegregatedByYears,
-  getTags,
-} from "@/lib/actions/posts";
+import FilterPostsWrapper from "@/components/DataWrappers/FilterPostsWrapper";
+import Loader from "@/components/Loader";
+import { Suspense } from "react";
 
-async function Posts() {
-  const tags = await getTags();
-  const categories = await getCategories();
-  const postsByYears = await getPostsSegregatedByYears();
-
+function Posts() {
   return (
     <>
       <hgroup className="mb-20">
@@ -19,11 +12,9 @@ async function Posts() {
           computers, about my learnings and life.
         </sub>
       </hgroup>
-      <FilterPosts
-        categories={categories}
-        tags={tags}
-        postsByYears={postsByYears}
-      />
+      <Suspense fallback={<Loader />}>
+        <FilterPostsWrapper />
+      </Suspense>
     </>
   );
 }

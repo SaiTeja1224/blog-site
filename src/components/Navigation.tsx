@@ -39,7 +39,9 @@ function Navigation() {
                 }
               )}
             >
-              <Link href={link}>{title}</Link>
+              <Link className="block" href={link}>
+                {title}
+              </Link>
             </li>
           );
         })}

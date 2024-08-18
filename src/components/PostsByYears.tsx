@@ -1,5 +1,5 @@
 import { Post } from "@/lib/types/contentful";
-import BlogList from "./PostsList";
+import PostsList from "./PostsList";
 
 function PostsByYears({ posts }: { posts: [string, Post[]][] }) {
   return (
@@ -8,7 +8,7 @@ function PostsByYears({ posts }: { posts: [string, Post[]][] }) {
         return (
           <div key={year} className="space-y-6 mt-10">
             <h3 className="text-3xl font-semibold">{year}</h3>
-            <BlogList posts={posts} />
+            <PostsList posts={posts} />
           </div>
         );
       })}

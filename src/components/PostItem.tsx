@@ -3,9 +3,9 @@ import { formatDate } from "@/lib/date";
 import { Post } from "@/lib/types/contentful";
 import Link from "next/link";
 
-type BlogItemProp = { post: Post };
+type PostItemProp = { post: Post };
 
-function PostItem({ post }: BlogItemProp) {
+function PostItem({ post }: PostItemProp) {
   return (
     <li className="group shadow-sm active:scale-95 hover:scale-105 shadow-stone-600 hover:shadow-accent-secondary dark:hover:shadow-accent bg-stone-300/30 dark:bg-stone-900/35 dark:hover:bg-stone-800/30 hover:bg-stone-500 transition">
       <Link
