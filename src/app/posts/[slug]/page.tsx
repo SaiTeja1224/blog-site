@@ -10,6 +10,9 @@ import rehypeRaw from "rehype-raw";
 
 async function Post({ params: { slug } }: { params: { slug: string } }) {
   const post = await getPostBySlug(slug);
+  const coverImageUrl = post.coverImage.fields.file.url.startsWith("http")
+    ? post.coverImage.fields.file.url
+    : `https://${post.coverImage.fields.file.url}`;
   return (
     <>
       <section
@@ -27,7 +30,7 @@ async function Post({ params: { slug } }: { params: { slug: string } }) {
         </section>
         <section>
           <Image
-            src={`https://${post.coverImage.fields.file.url}`}
+            src={coverImageUrl}
             width={1000}
             height={20}
             className="w-full"

@@ -24,7 +24,6 @@ const nav = [
 ];
 function Navigation() {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <nav>
       <ul className="flex gap-4 text-xl dark:text-stone-300">
