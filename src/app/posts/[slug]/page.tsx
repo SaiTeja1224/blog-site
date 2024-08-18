@@ -12,7 +12,8 @@ async function Post({ params: { slug } }: { params: { slug: string } }) {
   const post = await getPostBySlug(slug);
   const coverImageUrl = post.coverImage.fields.file.url.startsWith("http")
     ? post.coverImage.fields.file.url
-    : `https://${post.coverImage.fields.file.url}`;
+    : `https:${post.coverImage.fields.file.url}`;
+  console.log(coverImageUrl);
   return (
     <>
       <section
