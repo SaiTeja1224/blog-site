@@ -1,5 +1,6 @@
+import ProfileImage from "./assets/sai.jpeg";
+
 import Image from "next/image";
-import ProfileImage from "./sai.jpeg";
 import CommonBox from "@/components/CommonBox";
 import {
   DownloadIcon,
@@ -10,6 +11,8 @@ import {
 import FrontendIcon from "./components/frontend-icon";
 import BackendIcon from "./components/backend-icon";
 import OtherToolIcon from "./components/other-tool-icon";
+import Link from "next/link";
+import { appLinks } from "@/lib/constants";
 
 export const metadata = {
   title: "Sai Teja | About Me",
@@ -95,9 +98,13 @@ function About() {
         </section>
         <div className="flex items-stretch gap-3">
           <CommonBox button hover className="hover:scale-105 transition">
-            <div className="text-xl p-2 flex items-center gap-2 hover:text-accent-secondary-light dark:hover:text-accent-light">
+            <a
+              href={appLinks.resume}
+              download={true}
+              className="text-xl p-2 flex items-center gap-2 hover:text-accent-secondary-light dark:hover:text-accent-light"
+            >
               Download Resume <DownloadIcon width={20} height={20} />
-            </div>
+            </a>
           </CommonBox>
           <CommonBox button hover className="hover:scale-105 transition">
             <div className="text-xl p-2 flex items-center gap-2 hover:text-accent-secondary-light dark:hover:text-accent-light">
@@ -105,14 +112,22 @@ function About() {
             </div>
           </CommonBox>
           <CommonBox button hover className="hover:scale-105 transition">
-            <div className="text-xl p-2 flex items-center gap-2 hover:text-accent-secondary-light dark:hover:text-accent-light">
+            <Link
+              href={appLinks.linkedIn}
+              target="_blank"
+              className="text-xl p-2 flex items-center hover:text-accent-secondary-light dark:hover:text-accent-light"
+            >
               <LinkedInLogoIcon width={25} height={25} />
-            </div>
+            </Link>
           </CommonBox>
           <CommonBox button hover className="hover:scale-105 transition">
-            <div className="text-xl p-2 flex items-center gap-2 hover:text-accent-secondary-light dark:hover:text-accent-light">
+            <Link
+              href={appLinks.github}
+              target="_blank"
+              className="text-xl p-2 flex items-center hover:text-accent-secondary-light dark:hover:text-accent-light"
+            >
               <GitHubLogoIcon width={25} height={25} />
-            </div>
+            </Link>
           </CommonBox>
         </div>
       </div>
