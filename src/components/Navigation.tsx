@@ -17,10 +17,11 @@ const nav = [
     id: "posts",
   },
   // Need to add later
-  // {
-  //   title: "About Me",
-  //   link: "/about",
-  // },
+  {
+    title: "About Me",
+    link: appLinks.about,
+    id: "about",
+  }
 ];
 function Navigation() {
   const pathname = usePathname();

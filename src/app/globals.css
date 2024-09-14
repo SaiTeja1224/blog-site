@@ -31,6 +31,15 @@
 }
 
 @layer utilities {
+  .highlight {
+    @apply text-accent-secondary hover:text-accent-secondary-light dark:text-accent dark:hover:text-accent-light;
+  }
+  .hover-effect {
+    @apply hover:text-accent-secondary-light dark:hover:text-accent-light;
+  }
+  .highlight-hover {
+    @apply hover:underline underline-offset-2;
+  }
   .base-container {
     @apply lg:max-w-[50%] max-w-[90%] mx-auto;
   }

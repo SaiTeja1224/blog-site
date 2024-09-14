@@ -10,6 +10,7 @@ function CommonBox({
   fit,
   button,
   onClick,
+  className,
 }: {
   children: React.ReactNode;
   active?: boolean;
@@ -17,8 +18,9 @@ function CommonBox({
   fit?: boolean;
   button?: boolean;
   onClick?: (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => void;
+  className?: string;
 }) {
-  let className = cn(
+  let classes = cn(
     "border dark:bg-stone-800/50 bg-stone-300/30 border-stone-500/50 dark:border-accent-light dark:border-stone-200/25",
     {
       "w-fit": fit,
@@ -28,12 +30,14 @@ function CommonBox({
         active,
     }
   );
-
+  if (className) {
+    classes += ` ${className}`;
+  }
   if (button) {
-    className += " cursor-pointer active:scale-95";
+    classes += " cursor-pointer active:scale-95";
     return (
       <button
-        className={className}
+        className={classes}
         onClick={(e) => {
           if (!!onClick) {
             onClick(e);
@@ -44,7 +48,7 @@ function CommonBox({
       </button>
     );
   }
-  return <div className={className}>{children}</div>;
+  return <div className={classes}>{children}</div>;
 }
 
 export default CommonBox;

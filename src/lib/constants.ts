@@ -3,6 +3,7 @@ export const appLinks = {
 
   postsLink: "/posts/",
   tagsLink: "/tags/",
+  about: "/about/",
 
   getTagLink(tag: string) {
     return this.tagsLink + tag;

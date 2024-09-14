@@ -24,10 +24,8 @@ export default async function Home() {
         <p className="text-xl">
           Here in this site you can check out my{" "}
           <CustomLink href={appLinks.postsLink}>posts</CustomLink>,{" "}
-          <CustomLink href={appLinks.portfolioLink} target="_blank">
-            about me
-          </CustomLink>{" "}
-          and <br /> other cool things going about my day to day.
+          <CustomLink href={appLinks.about}>about me</CustomLink> and <br />{" "}
+          other cool things going about my day to day.
         </p>
       </hgroup>
       <h2 className="text-3xl font-semibold">My Thoughts, Posts and Stuff</h2>
