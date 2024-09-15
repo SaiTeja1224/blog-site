@@ -17,29 +17,24 @@ import {
 import { Input } from "@/components/UI/input";
 import { Textarea } from "@/components/UI/textarea";
 import { PaperPlaneIcon } from "@radix-ui/react-icons";
+import { sendEmail } from "@/actions/email";
+import { contactFormSchema, ContactFormValues } from "@/lib/types/schema";
 
 function ContactForm() {
-  const formSchema = z.object({
-    email: z.string().email("Please enter a valid email"),
-    message: z.string().min(5, "Please enter at least 5 characters"),
-  });
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(contactFormSchema),
     defaultValues: {
       email: "",
       message: "",
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    const formData = new FormData();
-
-    Object.entries(values).forEach(([key, value]) => {
-      formData.append(key, value);
-    });
-    console.log(values);
+  const onSubmit = (values: ContactFormValues) => {
     // Server Action call.
+    sendEmail(values.email, "Portfolio Contact Form", values.message);
+    form.reset();
   };
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
