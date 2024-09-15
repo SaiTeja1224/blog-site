@@ -76,8 +76,11 @@ function About() {
   return (
     <article className="space-y-20">
       <div className="space-y-5">
-        <section id="me" className="flex items-center justify-between">
-          <div className="basis-[50%]">
+        <section
+          id="me"
+          className="flex flex-wrap items-center justify-center gap-5 sm:gap-0 sm:justify-between"
+        >
+          <div className="sm:basis-[50%]">
             <h2 className="text-4xl font-semibold mb-5">Hello</h2>
             <p className="text-xl">
               Hey there! I&apos;m Sai. A{" "}
@@ -98,10 +101,10 @@ function About() {
             alt="sai teja"
             width={200}
             height={200}
-            className="rounded-full"
+            className="rounded-full w-[160px] sm:w-[200px] h-[160px] sm:h-[200px] "
           />
         </section>
-        <div className="flex items-stretch gap-3">
+        <div className="flex items-stretch justify-center sm:justify-start flex-wrap gap-3">
           <CommonBox button hover className="hover:scale-105 transition">
             <a
               href={appLinks.resume}
