@@ -13,9 +13,10 @@ import BackendIcon from "./components/backend-icon";
 import OtherToolIcon from "./components/other-tool-icon";
 import Link from "next/link";
 import { appLinks } from "@/lib/constants";
-// import { Input } from "@/components/UI/input";
-// import { Textarea } from "@/components/UI/textarea";
+import { Input } from "@/components/UI/input";
+import { Textarea } from "@/components/UI/textarea";
 import ScrollableLink from "./components/scrollable-link";
+import ContactForm from "./components/contact-form";
 
 export const metadata = {
   title: "Sai Teja | About Me",
@@ -155,7 +156,7 @@ function About() {
           movies and shows, drawing pictures, playing video games and traveling.
         </p>
       </section>
-      <section id="skills" className="space-y-5">
+      <section id="skills" className="space-y-7">
         <h2 className="text-4xl font-semibold">Skill Set</h2>
         <CommonBox className="space-y-12 p-4">
           {skillSets.map((skillSet) => (
@@ -176,7 +177,7 @@ function About() {
           ))}
         </CommonBox>
       </section>
-      {/* <form id="contact" className="space-y-7">
+      <section id="contact" className="space-y-7">
         <h2 className="text-4xl font-semibold">Contact</h2>
         <sub className="text-lg">
           Get in touch with me at{" "}
@@ -188,13 +189,8 @@ function About() {
           </a>{" "}
           or by the form below.
         </sub>
-        <Input placeholder="E-Mail" className="text-xl" />
-        <Textarea
-          rows={6}
-          className="resize-none text-xl"
-          placeholder="Enter your Message over here"
-        />
-      </form> */}
+        <ContactForm />
+      </section>
     </article>
   );
 }
