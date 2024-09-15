@@ -49,6 +49,10 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .input-border {
+    @apply border-stone-500/50 dark:border-stone-200/25;
+  }
 }
 
 /* MARKDOWN CLASSES */

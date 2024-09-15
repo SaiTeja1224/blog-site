@@ -3,6 +3,7 @@ export const appLinks = {
   github: "https://github.com/saiTeja1224",
   linkedIn: "https://www.linkedin.com/in/sai-teja-j/",
   resume: "/sai-resume.pdf",
+  email: "saitejaj07@gmail.com",
 
   postsLink: "/posts/",
   tagsLink: "/tags/",

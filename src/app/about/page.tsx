@@ -13,6 +13,9 @@ import BackendIcon from "./components/backend-icon";
 import OtherToolIcon from "./components/other-tool-icon";
 import Link from "next/link";
 import { appLinks } from "@/lib/constants";
+// import { Input } from "@/components/UI/input";
+// import { Textarea } from "@/components/UI/textarea";
+import ScrollableLink from "./components/scrollable-link";
 
 export const metadata = {
   title: "Sai Teja | About Me",
@@ -68,12 +71,13 @@ function About() {
       ],
     },
   ];
+
   return (
     <article className="space-y-20">
       <div className="space-y-5">
-        <section className="flex items-center justify-between">
+        <section id="me" className="flex items-center justify-between">
           <div className="basis-[50%]">
-            <h2 className="text-4xl font-semibold mb-5">Me</h2>
+            <h2 className="text-4xl font-semibold mb-5">Hello</h2>
             <p className="text-xl">
               Hey there! I&apos;m Sai. A{" "}
               <span className="highlight font-semibold">
@@ -101,21 +105,21 @@ function About() {
             <a
               href={appLinks.resume}
               download={true}
-              className="text-xl p-2 flex items-center gap-2 hover:text-accent-secondary-light dark:hover:text-accent-light"
+              className="text-xl p-2 flex items-center gap-2 hover-effect"
             >
               Download Resume <DownloadIcon width={20} height={20} />
             </a>
           </CommonBox>
           <CommonBox button hover className="hover:scale-105 transition">
-            <div className="text-xl p-2 flex items-center gap-2 hover:text-accent-secondary-light dark:hover:text-accent-light">
+            <ScrollableLink id="contact">
               Contact Me <PaperPlaneIcon width={20} height={20} />
-            </div>
+            </ScrollableLink>
           </CommonBox>
           <CommonBox button hover className="hover:scale-105 transition">
             <Link
               href={appLinks.linkedIn}
               target="_blank"
-              className="text-xl p-2 flex items-center hover:text-accent-secondary-light dark:hover:text-accent-light"
+              className="text-xl p-2 flex items-center hover-effect"
             >
               <LinkedInLogoIcon width={25} height={25} />
             </Link>
@@ -124,7 +128,7 @@ function About() {
             <Link
               href={appLinks.github}
               target="_blank"
-              className="text-xl p-2 flex items-center hover:text-accent-secondary-light dark:hover:text-accent-light"
+              className="text-xl p-2 flex items-center hover-effect"
             >
               <GitHubLogoIcon width={25} height={25} />
             </Link>
@@ -151,7 +155,7 @@ function About() {
           movies and shows, drawing pictures, playing video games and traveling.
         </p>
       </section>
-      <section className="space-y-5">
+      <section id="skills" className="space-y-5">
         <h2 className="text-4xl font-semibold">Skill Set</h2>
         <CommonBox className="space-y-12 p-4">
           {skillSets.map((skillSet) => (
@@ -172,6 +176,25 @@ function About() {
           ))}
         </CommonBox>
       </section>
+      {/* <form id="contact" className="space-y-7">
+        <h2 className="text-4xl font-semibold">Contact</h2>
+        <sub className="text-lg">
+          Get in touch with me at{" "}
+          <a
+            className="highlight highlight-hover"
+            href={"mailto:" + appLinks.email}
+          >
+            {appLinks.email}
+          </a>{" "}
+          or by the form below.
+        </sub>
+        <Input placeholder="E-Mail" className="text-xl" />
+        <Textarea
+          rows={6}
+          className="resize-none text-xl"
+          placeholder="Enter your Message over here"
+        />
+      </form> */}
     </article>
   );
 }
