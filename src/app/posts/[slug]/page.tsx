@@ -89,7 +89,7 @@ async function Post({ params: { slug } }: { params: { slug: string } }) {
               <h3 className="w-full mt-0 font-semibold">About Me</h3>
               <p className="">
                 Hey there! I&apos;m{" "}
-                <Link href={appLinks.portfolioLink} target="_blank">
+                <Link href={appLinks.about} target="_blank">
                   Sai Teja
                 </Link>
                 . Welcome to my domain. This is just a place for me to dump

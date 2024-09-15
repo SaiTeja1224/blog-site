@@ -1,6 +1,6 @@
 export const appLinks = {
   portfolioLink: "https://saiteja1224.github.io/portfolio/",
-  github: "https://saiteja1224.github.io/portfolio/",
+  github: "https://github.com/saiTeja1224",
   linkedIn: "https://www.linkedin.com/in/sai-teja-j/",
   resume: "/sai-resume.pdf",
 
