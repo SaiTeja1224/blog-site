@@ -18,10 +18,10 @@ const nav = [
   },
   // Need to add later
   {
-    title: "About Me",
+    title: "About",
     link: appLinks.about,
     id: "about",
-  }
+  },
 ];
 function Navigation() {
   const pathname = usePathname();
