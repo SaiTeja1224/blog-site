@@ -8,6 +8,7 @@ const OtherToolIcon = (props: SVGProps<SVGSVGElement>) => (
     viewBox="0 0 30 30"
     {...props}
   >
+    <title>Tools/Libraries</title>
     <path
       stroke="currentColor"
       fill="none"

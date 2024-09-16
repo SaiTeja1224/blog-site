@@ -2,7 +2,7 @@ import { SVGProps } from "react";
 
 const FrontendIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={44} height={37} {...props}>
-    <title>{"frontend-icon"}</title>
+    <title>Frontend</title>
     <g
       fill="none"
       fillRule="evenodd"

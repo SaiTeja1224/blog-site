@@ -2,7 +2,7 @@ import { SVGProps } from "react";
 
 const BackendIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={35} height={44} {...props}>
-    <title>{"db"}</title>
+    <title>Backend</title>
     <g
       fill="none"
       fillRule="evenodd"
