@@ -11,6 +11,14 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/portfolio",
+        destination: "/about",
+      },
+    ];
+  },
 };
 
 export default nextConfig;

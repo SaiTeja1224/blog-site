@@ -2,23 +2,33 @@
 
 function ScrollableLink({
   children,
+  className,
   id,
 }: {
   children: React.ReactNode;
+  className?: string;
   id: string;
 }) {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const offset = 100; // Set the desired offset value
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
   return (
     <a
       href={`#${id}`}
       onClick={(event) => handleScroll(event)}
-      className="text-xl p-2 flex items-center gap-2 hover-effect"
+      className={className}
     >
       {children}
     </a>

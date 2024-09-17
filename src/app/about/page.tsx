@@ -202,7 +202,10 @@ function About() {
             hover
             className="hover:scale-105 transition"
           >
-            <ScrollableLink id="contact">
+            <ScrollableLink
+              id="contact"
+              className="text-xl p-2 flex items-center gap-2 hover-effect"
+            >
               Contact Me <PaperPlaneIcon width={20} height={20} />
             </ScrollableLink>
           </CommonBox>
