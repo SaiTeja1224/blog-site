@@ -35,13 +35,18 @@ function About() {
   );
   const projects = [
     {
-      title: "Portfolio",
-      description: "This site itself.",
+      title: "Portfolio/Blog",
+      description:
+        "This website itself, it also has a posts section where you can view my posts",
       source: appLinks.blogSite,
       links: [
         {
           title: sourceTitle,
           link: appLinks.blogSite,
+        },
+        {
+          title: demoTitle,
+          link: "https://thesaiteja.com/",
         },
       ],
     },

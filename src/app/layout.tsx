@@ -19,10 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={inter.className + " space-y-7"}>
-        <NavBar />
-        <main className="min-h-[80svh]">{children}</main>
-        <Footer />
+      <body className={inter.className}>
+        <main className="h-full space-y-7">
+          <NavBar />
+          <section className="min-h-[80svh]">{children}</section>
+          <Footer />
+        </main>
       </body>
     </html>
   );
