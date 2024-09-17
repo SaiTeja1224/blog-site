@@ -291,7 +291,9 @@ function About() {
               >
                 {project.title}
               </Link>
-              <p className="text-stone-400 text-base">{project.description}</p>
+              <p className="dark:text-stone-400 text-stone-600 text-base">
+                {project.description}
+              </p>
               <footer className="mt-auto flex gap-2">
                 {project.links.map((link) => (
                   <CommonBox
