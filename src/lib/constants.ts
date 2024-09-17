@@ -25,4 +25,22 @@ export const appLinks = {
   getCategoryLink(category: string) {
     return "/category/" + category;
   },
+  portfolioNavigations: [
+    {
+      title: "Me",
+      id: "me",
+    },
+    {
+      title: "Skills",
+      id: "skills",
+    },
+    {
+      title: "Projects",
+      id: "projects",
+    },
+    {
+      title: "Contact",
+      id: "contact",
+    },
+  ],
 };

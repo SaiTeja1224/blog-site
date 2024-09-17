@@ -1,6 +1,6 @@
 "use client";
 
-import ScrollableLink from "@/app/about/components/scrollable-link";
+import ScrollableLink from "@/components/scrollable-link";
 import { appLinks } from "@/lib/constants";
 import { cn } from "@/lib/style";
 import Link from "next/link";
@@ -18,31 +18,13 @@ const nav = [
     link: appLinks.postsLink,
     id: "posts",
   },
-  // Need to add later
   {
     title: "About",
     link: appLinks.about,
     id: "about",
   },
 ];
-const portfolioLinks = [
-  {
-    title: "Me",
-    id: "me",
-  },
-  {
-    title: "Skills",
-    id: "skills",
-  },
-  {
-    title: "Projects",
-    id: "projects",
-  },
-  {
-    title: "Contact",
-    id: "contact",
-  },
-];
+
 function Navigation() {
   const pathname = usePathname();
   const isPortfolio = pathname.includes("portfolio");
@@ -51,7 +33,7 @@ function Navigation() {
       <ul className="flex gap-4 text-xl dark:text-stone-300">
         {isPortfolio ? (
           <>
-            {portfolioLinks.map(({ title, id }) => {
+            {appLinks.portfolioNavigations.map(({ title, id }) => {
               return (
                 <li
                   key={id}

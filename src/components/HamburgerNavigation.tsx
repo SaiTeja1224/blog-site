@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import CommonBox from "./CommonBox";
-import ScrollableLink from "@/app/about/components/scrollable-link";
+import ScrollableLink from "@/components/scrollable-link";
+import { appLinks } from "@/lib/constants";
 
 function HamburgerNavigation() {
   const [open, setOpen] = useState(false);
@@ -49,38 +50,19 @@ function HamburgerNavigation() {
         >
           <CommonBox className="dark:bg-stone-900 bg-stone-200 py-4">
             <ul>
-              <li
-                className="block cursor-pointer dark:hover:bg-accent dark:hover:text-stone-900 hover:bg-accent-secondary hover:text-stone-200 transition"
-                onClick={handleOpen}
-              >
-                <ScrollableLink className="block px-4 py-3" id="me">
-                  Me
-                </ScrollableLink>
-              </li>
-              <li
-                className="block cursor-pointer dark:hover:bg-accent dark:hover:text-stone-900 hover:bg-accent-secondary hover:text-stone-200 transition"
-                onClick={handleOpen}
-              >
-                <ScrollableLink className="block px-4 py-3" id="skills">
-                  Skills
-                </ScrollableLink>
-              </li>
-              <li
-                className="block cursor-pointer dark:hover:bg-accent dark:hover:text-stone-900 hover:bg-accent-secondary hover:text-stone-200 transition"
-                onClick={handleOpen}
-              >
-                <ScrollableLink className="block px-4 py-3" id="projects">
-                  Projects
-                </ScrollableLink>
-              </li>
-              <li
-                className="block cursor-pointer dark:hover:bg-accent dark:hover:text-stone-900 hover:bg-accent-secondary hover:text-stone-200 transition"
-                onClick={handleOpen}
-              >
-                <ScrollableLink className="block px-4 py-3" id="contact">
-                  Contact
-                </ScrollableLink>
-              </li>
+              {appLinks.portfolioNavigations.map(({ id, title }) => {
+                return (
+                  <li
+                    key={id}
+                    className="block cursor-pointer dark:hover:bg-accent dark:hover:text-stone-900 hover:bg-accent-secondary hover:text-stone-200 transition"
+                    onClick={handleOpen}
+                  >
+                    <ScrollableLink className="block px-4 py-3" id={id}>
+                      {title}
+                    </ScrollableLink>
+                  </li>
+                );
+              })}
             </ul>
           </CommonBox>
         </div>

@@ -14,7 +14,7 @@ import BackendIcon from "./components/backend-icon";
 import OtherToolIcon from "./components/other-tool-icon";
 import Link from "next/link";
 import { appLinks } from "@/lib/constants";
-import ScrollableLink from "./components/scrollable-link";
+import ScrollableLink from "../../components/scrollable-link";
 import ContactForm from "./components/contact-form";
 
 export const metadata = {
@@ -186,7 +186,10 @@ function About() {
             className="rounded-full w-[160px] sm:w-[200px] h-[160px] sm:h-[200px] "
           />
         </section>
-        <div className="flex items-stretch justify-center sm:justify-start flex-wrap gap-3">
+        <div
+          id="cta"
+          className="flex items-stretch justify-center sm:justify-start flex-wrap gap-3"
+        >
           <CommonBox
             button
             noFocus
