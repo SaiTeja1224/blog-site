@@ -4,6 +4,7 @@ import Image from "next/image";
 import CommonBox from "@/components/CommonBox";
 import {
   DownloadIcon,
+  ExternalLinkIcon,
   GitHubLogoIcon,
   LinkedInLogoIcon,
   PaperPlaneIcon,
@@ -13,8 +14,6 @@ import BackendIcon from "./components/backend-icon";
 import OtherToolIcon from "./components/other-tool-icon";
 import Link from "next/link";
 import { appLinks } from "@/lib/constants";
-import { Input } from "@/components/UI/input";
-import { Textarea } from "@/components/UI/textarea";
 import ScrollableLink from "./components/scrollable-link";
 import ContactForm from "./components/contact-form";
 
@@ -24,6 +23,84 @@ export const metadata = {
 };
 
 function About() {
+  const sourceTitle = (
+    <div className="flex items-center gap-2">
+      Source <ExternalLinkIcon width={16} height={16} />
+    </div>
+  );
+  const demoTitle = (
+    <div className="flex items-center gap-2">
+      Demo <ExternalLinkIcon width={16} height={16} />
+    </div>
+  );
+  const projects = [
+    {
+      title: "Portfolio",
+      description: "This site itself.",
+      source: appLinks.blogSite,
+      links: [
+        {
+          title: sourceTitle,
+          link: appLinks.blogSite,
+        },
+      ],
+    },
+    {
+      title: "Topic Scouter",
+      description:
+        "An application to help view and create topics, rate them and view others' rating on it.",
+      source: appLinks.topicScouter,
+
+      links: [
+        {
+          title: sourceTitle,
+          link: appLinks.topicScouter,
+        },
+        {
+          title: demoTitle,
+          link: "https://saiteja1224.github.io/topic-scouter/",
+        },
+      ],
+    },
+    {
+      title: "Backend Starter Kit",
+      description: "A starter kit to get your web server up and running.",
+      source: appLinks.backendStarterKit,
+
+      links: [
+        {
+          title: sourceTitle,
+          link: appLinks.backendStarterKit,
+        },
+      ],
+    },
+    {
+      title: "Utils Server",
+      description:
+        "A common server to use for general purpose needs (eg : Auth, email, SMS, schedulers etc.)",
+      source: appLinks.utilsServer,
+
+      links: [
+        {
+          title: sourceTitle,
+          link: appLinks.utilsServer,
+        },
+      ],
+    },
+    {
+      title: "YelpCamp",
+      description:
+        "An application where you can add campground sites, comment under the post and post reviews about the place you visit.",
+      source: appLinks.yelpCamp,
+
+      links: [
+        {
+          title: sourceTitle,
+          link: appLinks.yelpCamp,
+        },
+      ],
+    },
+  ];
   const skillSets = [
     {
       title: "Frontend",
@@ -105,7 +182,12 @@ function About() {
           />
         </section>
         <div className="flex items-stretch justify-center sm:justify-start flex-wrap gap-3">
-          <CommonBox button hover className="hover:scale-105 transition">
+          <CommonBox
+            button
+            noFocus
+            hover
+            className="hover:scale-105 transition"
+          >
             <a
               href={appLinks.resume}
               download={true}
@@ -114,12 +196,22 @@ function About() {
               Download Resume <DownloadIcon width={20} height={20} />
             </a>
           </CommonBox>
-          <CommonBox button hover className="hover:scale-105 transition">
+          <CommonBox
+            button
+            noFocus
+            hover
+            className="hover:scale-105 transition"
+          >
             <ScrollableLink id="contact">
               Contact Me <PaperPlaneIcon width={20} height={20} />
             </ScrollableLink>
           </CommonBox>
-          <CommonBox button hover className="hover:scale-105 transition">
+          <CommonBox
+            button
+            noFocus
+            hover
+            className="hover:scale-105 transition flex items-center"
+          >
             <Link
               href={appLinks.linkedIn}
               target="_blank"
@@ -128,7 +220,12 @@ function About() {
               <LinkedInLogoIcon width={25} height={25} />
             </Link>
           </CommonBox>
-          <CommonBox button hover className="hover:scale-105 transition">
+          <CommonBox
+            button
+            noFocus
+            hover
+            className="hover:scale-105 transition flex items-center"
+          >
             <Link
               href={appLinks.github}
               target="_blank"
@@ -139,7 +236,7 @@ function About() {
           </CommonBox>
         </div>
       </div>
-      <section>
+      <section id="about">
         <h2 className="text-4xl font-semibold mb-5">About Me </h2>
         <p className="text-xl leading-relaxed">
           I am Sai Teja a passionate and creative developer based in Hyderabad,
@@ -179,6 +276,44 @@ function About() {
             </div>
           ))}
         </CommonBox>
+      </section>
+      <section id="projects" className="space-y-7">
+        <h2 className="text-4xl font-semibold">Projects</h2>
+        <div className="flex flex-wrap gap-10">
+          {projects.map((project) => (
+            <CommonBox
+              key={project.title}
+              className="flex-1 flex flex-col min-w-60 h-60 p-4 gap-3"
+            >
+              <Link
+                href={project.source}
+                className="text-2xl font-medium hover-effect highlight-hover"
+              >
+                {project.title}
+              </Link>
+              <p className="text-stone-400 text-base">{project.description}</p>
+              <footer className="mt-auto flex gap-2">
+                {project.links.map((link) => (
+                  <CommonBox
+                    key={link.link}
+                    button
+                    noFocus
+                    hover
+                    className="hover:scale-105 transition"
+                  >
+                    <Link
+                      href={link.link}
+                      target="_blank"
+                      className="block hover-effect p-1"
+                    >
+                      {link.title}
+                    </Link>
+                  </CommonBox>
+                ))}
+              </footer>
+            </CommonBox>
+          ))}
+        </div>
       </section>
       <section id="contact" className="space-y-7">
         <h2 className="text-4xl font-semibold">Contact</h2>

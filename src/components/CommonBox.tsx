@@ -8,6 +8,7 @@ function CommonBox({
   active,
   hover,
   fit,
+  noFocus,
   button,
   onClick,
   className,
@@ -16,6 +17,7 @@ function CommonBox({
   active?: boolean;
   hover?: boolean;
   fit?: boolean;
+  noFocus?: boolean;
   button?: boolean;
   onClick?: (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => void;
   className?: string;
@@ -37,6 +39,7 @@ function CommonBox({
     classes += " cursor-pointer active:scale-95";
     return (
       <button
+        tabIndex={noFocus ? -1 : 0}
         className={classes}
         onClick={(e) => {
           if (!!onClick) {

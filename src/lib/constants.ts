@@ -5,6 +5,13 @@ export const appLinks = {
   resume: "/sai-resume.pdf",
   email: "saitejaj07@gmail.com",
 
+  // Projects
+  blogSite: "https://github.com/SaiTeja1224/blog-site",
+  yelpCamp: "https://github.com/SaiTeja1224/YelpCamp",
+  topicScouter: "https://github.com/SaiTeja1224/topic-scouter",
+  backendStarterKit: "https://github.com/SaiTeja1224/base-backend-express",
+  utilsServer: "https://github.com/SaiTeja1224/util-server",
+
   postsLink: "/posts/",
   tagsLink: "/tags/",
   about: "/about/",
