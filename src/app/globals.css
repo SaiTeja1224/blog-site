@@ -9,8 +9,8 @@
     min-height: 100svh;
     scrollbar-width: thin;
     scrollbar-color: rgb(161 161 170 / 0.7) rgb(63 63 70 / 0.5);
-    scrollbar-gutter: "stable";
   }
+
   ::-webkit-scrollbar {
     width: 12px; /* Width of the entire scrollbar */
   }

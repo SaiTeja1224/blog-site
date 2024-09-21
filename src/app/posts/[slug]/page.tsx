@@ -8,6 +8,15 @@ import React from "react";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
+export async function generateMetadata({ params: { slug } }: { params: { slug: string } }) {
+  const post = await getPostBySlug(slug);
+
+  return {
+    title: post.title,
+    description : post.excerpt
+  }
+}
+
 async function Post({ params: { slug } }: { params: { slug: string } }) {
   const post = await getPostBySlug(slug);
   const coverImageUrl = post.coverImage.fields.file.url.startsWith("http")

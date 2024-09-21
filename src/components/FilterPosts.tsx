@@ -2,12 +2,13 @@
 
 import { CategoryValue, Post } from "@/lib/types/contentful";
 import CommonBox from "./CommonBox";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { getPostsSegregatedByYears } from "@/lib/actions/posts";
 import Link from "next/link";
 import PostsByYears from "./PostsByYears";
 import CustomLink from "./CustomLink";
 import { appLinks } from "@/lib/constants";
+import Loader from "./Loader";
 
 type AllPostsProps = {
   tags: { name: string; active: boolean }[];
@@ -16,11 +17,13 @@ type AllPostsProps = {
 };
 
 function FilterPosts({ tags, categories, postsByYears }: AllPostsProps) {
+  const [loading, setLoading] = useState(false);
   const [tagsData, setTagsData] = useState(tags);
   const [categoriesData, setCategoriesData] = useState(categories);
   const [postsData, setPostsData] = useState(postsByYears);
 
   const handleSelectCategory = async (idx: number) => {
+    setLoading(true);
     const newCategories = categoriesData.map((item, i) => {
       const newCategory = { ...item };
       if (i === idx) {
@@ -48,8 +51,10 @@ function FilterPosts({ tags, categories, postsByYears }: AllPostsProps) {
     };
     const newFilteredPosts = await getPostsSegregatedByYears(filter);
     setPostsData(newFilteredPosts);
+    setLoading(false);
   };
   const handleSelectTag = async (idx: number) => {
+    setLoading(true);
     const newTags = tagsData.map((item, i) => {
       const newTag = { ...item };
       if (i === idx) {
@@ -78,6 +83,7 @@ function FilterPosts({ tags, categories, postsByYears }: AllPostsProps) {
     };
     const newFilteredPosts = await getPostsSegregatedByYears(filter);
     setPostsData(newFilteredPosts);
+    setLoading(false);
   };
 
   return (
@@ -129,7 +135,7 @@ function FilterPosts({ tags, categories, postsByYears }: AllPostsProps) {
           })}
         </section>
       </div>
-      <PostsByYears posts={postsData} />
+        {loading ? <Loader /> : <PostsByYears posts={postsData} />}
     </>
   );
 }

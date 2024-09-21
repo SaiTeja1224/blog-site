@@ -1,6 +1,13 @@
 import PostsByYears from "@/components/PostsByYears";
 import { getPostsSegregatedByYears } from "@/lib/actions/posts";
 
+export function generateMetadata({ params: { tag } }: { params: { tag: string } }) {
+  return {
+    title: "Posts tagged with " + tag,
+    description : "Posts tagged with" + tag
+  }
+}
+
 async function TagDetails({ params: { tag } }: { params: { tag: string } }) {
   const posts = await getPostsSegregatedByYears({ tags: tag });
   return (

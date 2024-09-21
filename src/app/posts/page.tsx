@@ -2,6 +2,11 @@ import FilterPostsWrapper from "@/components/DataWrappers/FilterPostsWrapper";
 import Loader from "@/components/Loader";
 import { Suspense } from "react";
 
+export const metadata = {
+  title: "Sai Teja | Posts",
+  description: "Posts on my thoughts and stuffs",
+};
+
 function Posts() {
   return (
     <>

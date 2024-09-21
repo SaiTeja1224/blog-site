@@ -3,6 +3,11 @@ import { getTags } from "@/lib/actions/posts";
 import { appLinks } from "@/lib/constants";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Sai Teja | Tags",
+  description: "Tags that are attached to my posts",
+}
+
 async function Tags() {
   const tags = await getTags();
 
