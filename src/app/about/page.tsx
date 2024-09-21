@@ -169,7 +169,7 @@ function About() {
               <span className="highlight font-semibold">
                 full-stack developer
               </span>{" "}
-              with <span className="highlight">2</span> year of experience. I
+              with <span className="highlight">2</span> years of experience. I
               have a passion for creating sites & apps with a slick and
               responsive design.{" "}
               <span className="highlight highlight-hover">
