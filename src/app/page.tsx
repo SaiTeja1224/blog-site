@@ -4,6 +4,8 @@ import { getPosts } from "@/lib/actions/posts";
 import CustomLink from "@/components/CustomLink";
 import { appLinks } from "@/lib/constants";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Sai Teja's Blogs",
   description:

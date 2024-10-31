@@ -6,7 +6,9 @@ import Link from "next/link";
 export const metadata = {
   title: "Sai Teja | Tags",
   description: "Tags that are attached to my posts",
-}
+};
+
+export const dynamic = "force-dynamic";
 
 async function Tags() {
   const tags = await getTags();

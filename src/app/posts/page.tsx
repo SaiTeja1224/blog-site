@@ -7,6 +7,8 @@ export const metadata = {
   description: "Posts on my thoughts and stuffs",
 };
 
+export const dynamic = "force-dynamic";
+
 function Posts() {
   return (
     <>
