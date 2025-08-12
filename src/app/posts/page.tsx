@@ -1,10 +1,20 @@
 import FilterPostsWrapper from "@/components/DataWrappers/FilterPostsWrapper";
 import Loader from "@/components/Loader";
 import { Suspense } from "react";
+import { appLinks } from "@/lib/constants";
 
 export const metadata = {
   title: "Posts",
   description: "Posts on my thoughts and stuffs",
+  openGraph: {
+    title: "Sai Teja - Posts",
+    description: "Posts on my thoughts and stuffs",
+    url: `${appLinks.baseLink}/posts`,
+  },
+  twitter: {
+    title: "Sai Teja - Posts",
+    description: "Posts on my thoughts and stuffs",
+  },
 };
 
 export const dynamic = "force-dynamic";
