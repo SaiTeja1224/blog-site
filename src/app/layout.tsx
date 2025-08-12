@@ -9,7 +9,7 @@ const defaultOgImage = `${appLinks.baseLink}/favicon.ico`;
 export const metadata = {
   metadataBase: new URL(appLinks.baseLink),
   title: {
-    default: "Sai Teja – Developer & Creator",
+    default: "Sai Teja",
     template: "%s | Sai Teja",
   },
   description:
@@ -18,7 +18,7 @@ export const metadata = {
     canonical: appLinks.baseLink,
   },
   openGraph: {
-    title: "Sai Teja – Developer & Creator",
+    title: "Sai Teja",
     description:
       "Full-stack developer sharing projects, tutorials, and insights about React, Next.js, and web development.",
     url: appLinks.baseLink,
@@ -28,7 +28,7 @@ export const metadata = {
         url: defaultOgImage,
         width: 1200,
         height: 630,
-        alt: "Sai Teja – Developer & Creator",
+        alt: "Sai Teja",
       },
     ],
     locale: "en_US",
@@ -36,7 +36,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sai Teja – Developer & Creator",
+    title: "Sai Teja",
     description:
       "Full-stack developer sharing projects, tutorials, and insights about React, Next.js, and web development.",
     images: [defaultOgImage],
