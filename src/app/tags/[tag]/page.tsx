@@ -4,7 +4,7 @@ import { getPostsSegregatedByYears } from "@/lib/actions/posts";
 export function generateMetadata({ params: { tag } }: { params: { tag: string } }) {
   return {
     title: "Posts tagged with " + tag,
-    description : "Posts tagged with" + tag
+    description : "Posts tagged with " + tag
   }
 }
 

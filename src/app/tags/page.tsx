@@ -4,7 +4,7 @@ import { appLinks } from "@/lib/constants";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Sai Teja | Tags",
+  title: "Tags",
   description: "Tags that are attached to my posts",
 };
 

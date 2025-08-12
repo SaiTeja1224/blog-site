@@ -14,10 +14,39 @@ export async function generateMetadata({
   params: { slug: string };
 }) {
   const post = await getPostBySlug(slug);
+  const baseUrl = "https://www.thesaiteja.com";
+  const coverImageUrl = post.coverImage.fields.file.url.startsWith("http")
+    ? post.coverImage.fields.file.url
+    : `https:${post.coverImage.fields.file.url}`;
 
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `${baseUrl}/posts/${slug}`,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `${baseUrl}/posts/${slug}`,
+      type: "article",
+      publishedTime: new Date(post.publishedDate).toISOString(),
+      authors: ["Sai Teja"],
+      images: [
+        {
+          url: coverImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [coverImageUrl],
+    },
   };
 }
 

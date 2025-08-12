@@ -17,11 +17,37 @@ import { appLinks } from "@/lib/constants";
 import ScrollableLink from "../../components/scrollable-link";
 import ContactForm from "./components/contact-form";
 
+const defaultOgImage = `${appLinks.baseLink}/favicon.ico`;
 export const metadata = {
-  title: "Sai Teja | About Me",
-  description: "Know more about me",
+  title: "About Me",
+  description:
+    "Learn more about Sai Teja — a full-stack developer from Hyderabad, India, specializing in React, Next.js, Node.js, and creating smooth, responsive web experiences.",
+  alternates: {
+    canonical: "https://thesaiteja.com/about",
+  },
+  openGraph: {
+    title: "About Me | Sai Teja",
+    description:
+      "Discover Sai Teja's journey, skills, and projects. Full-stack developer passionate about building intuitive and engaging web apps.",
+    url: "https://thesaiteja.com/about",
+    type: "profile",
+    images: [
+      {
+        url: defaultOgImage, // or your profile image
+        width: 1200,
+        height: 630,
+        alt: "Sai Teja - About Me",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Me | Sai Teja",
+    description:
+      "Discover Sai Teja's journey, skills, and projects. Full-stack developer passionate about building intuitive and engaging web apps.",
+    images: [defaultOgImage], // or your profile image
+  },
 };
-
 function About() {
   const sourceTitle = (
     <div className="flex items-center gap-2">
@@ -46,7 +72,7 @@ function About() {
         },
         {
           title: demoTitle,
-          link: "https://thesaiteja.com/",
+          link: appLinks.baseLink,
         },
       ],
     },

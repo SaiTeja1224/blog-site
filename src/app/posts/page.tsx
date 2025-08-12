@@ -3,7 +3,7 @@ import Loader from "@/components/Loader";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "Sai Teja | Posts",
+  title: "Posts",
   description: "Posts on my thoughts and stuffs",
 };
 

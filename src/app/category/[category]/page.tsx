@@ -4,6 +4,13 @@ import {
   getPostsSegregatedByYears,
 } from "@/lib/actions/posts";
 
+export function generateMetadata({ params: { category } }: { params: { category: string } }) {
+  return {
+    title: "Posts categorized as " + category,
+    description : "Posts categorized as " + category
+  }
+}
+
 async function TagDetails({
   params: { category },
 }: {
