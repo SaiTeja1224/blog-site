@@ -163,19 +163,13 @@ function About() {
           className="flex flex-wrap items-center justify-center gap-5 sm:gap-0 sm:justify-between"
         >
           <div className="sm:basis-[50%]">
-            <h2 className="text-4xl font-semibold mb-5">Hello</h2>
+            {/* <h2 className="text-4xl font-semibold mb-5">Hello</h2> */}
             <p className="text-xl">
-              Hey there! I&apos;m Sai. A{" "}
+              Hey there! I&apos;m Sai, a{" "}
               <span className="highlight font-semibold">
                 full-stack developer
               </span>{" "}
-              with <span className="highlight">2</span> years of experience. I
-              have a passion for creating sites & apps with a slick and
-              responsive design.{" "}
-              <span className="highlight highlight-hover">
-                React, Next & Node
-              </span>{" "}
-              are my primary fields.
+              who works mainly with <span className="highlight highlight-hover">JavaScript</span> and loves bringing ideas to life as interactive experiences. Over the past couple of years, I’ve been building smooth, responsive web apps, always aiming to make them feel intuitive and a little bit special.
             </p>
           </div>
           <Image
@@ -250,25 +244,16 @@ function About() {
       <section id="about">
         <h2 className="text-4xl font-semibold mb-5">About Me </h2>
         <p className="text-xl leading-relaxed">
-          I am Sai Teja a passionate and creative developer based in Hyderabad,
-          Telangana, India. As I studied{" "}
-          <span className="highlight">computer science</span> , I discovered I
-          enjoy programming. It sparked my interest and made me curious about
-          all the cool things you can do with tech. Out of many streams in
-          programming <span className="highlight">web development</span>{" "}
-          appealed to me the most. It allows me paint my idea on the canvas and
-          provide it for the world to see. My core stack is{" "}
-          <span className="highlight">
-            Next.js, React, Node.js, Typescript, and MongoDB
-          </span>
-          . I&apos;m always eager to embrace new technologies and expand my
-          skill set. I&apos;m looking forward to working with any of you
-          interested. <br /> <br /> While I&apos;m not coding, I enjoy watching
-          movies and shows, drawing pictures, playing video games and traveling.
+          I’m Sai Teja, a developer based in Hyderabad, 
+          India, and I enjoy building intuitive and engaging web experiences. My journey in technology began with a degree in <span className="highlight">Computer Science</span>, where I discovered my love for programming.
+          <br /> <br /> 
+          Among the many branches of programming, <span className="highlight">web development</span> captured my heart the most—it lets me bring ideas to life, painting them onto a digital canvas for the world to experience. My core tech stack includes <span className="highlight">Next.js, React, Node.js, TypeScript, and MongoDB</span>, but I’m always eager to explore new tools and broaden my skill set.
+          <br /> <br />
+          When I’m not coding, you’ll often find me watching movies and shows, sketching, playing video games, or enjoying sports like badminton and cricket.
         </p>
       </section>
       <section id="skills" className="space-y-7">
-        <h2 className="text-4xl font-semibold">Skill Set</h2>
+        <h2 className="text-4xl font-semibold">What I Work With</h2>
         <CommonBox className="space-y-12 p-4">
           {skillSets.map((skillSet) => (
             <div className="flex items-center gap-5" key={skillSet.title}>
@@ -289,7 +274,7 @@ function About() {
         </CommonBox>
       </section>
       <section id="projects" className="space-y-7">
-        <h2 className="text-4xl font-semibold">Projects</h2>
+        <h2 className="text-4xl font-semibold">Things I’ve Built</h2>
         <div className="flex flex-wrap gap-10">
           {projects.map((project) => (
             <CommonBox
@@ -329,7 +314,7 @@ function About() {
         </div>
       </section>
       <section id="contact" className="space-y-7">
-        <h2 className="text-4xl font-semibold">Contact</h2>
+        <h2 className="text-4xl font-semibold">Let’s Connect</h2>
         <sub className="text-lg">
           Get in touch with me at{" "}
           <a

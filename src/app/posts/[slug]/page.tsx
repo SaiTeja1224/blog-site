@@ -106,7 +106,7 @@ async function Post({ params: { slug } }: { params: { slug: string } }) {
                 my site.
               </p>
               <p>
-                I am a software engineer, I like building, creating sites &
+                I am a programmer, I like building, creating sites &
                 apps. This is one of my personal sites free to access, use it
                 however you&apos;d like to.
               </p>

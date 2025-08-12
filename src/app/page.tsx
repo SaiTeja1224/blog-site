@@ -7,7 +7,7 @@ import { appLinks } from "@/lib/constants";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Sai Teja's Blogs",
+  title: "Sai Teja",
   description:
     "Learn more about Sai Teja, about his ways in web development, in general his life and other cool thoughts",
 };
@@ -17,14 +17,14 @@ export default async function Home() {
   return (
     <article className="base-container space-y-7">
       <hgroup className="mb-20">
-        <h2 className="text-4xl font-bold mb-5">Hey I&apos;m Sai</h2>
+        <h2 className="text-4xl font-bold mb-5">Hey there</h2>
         <p className="text-xl mb-5">
-          I&apos;m a software developer, interested in web applications, coding,
+          I&apos;m Sai. Programmer, web dev. I love arts, computers, watching stuff,
           <br />
-          computers, games and many more.
+          video games and sports. It&apos;s nice to see you all here.
         </p>
         <p className="text-xl">
-          Here in this site you can check out my{" "}
+          Over here you can check out my{" "}
           <CustomLink href={appLinks.postsLink}>posts</CustomLink>,{" "}
           <CustomLink href={appLinks.about}>about me</CustomLink> and <br />{" "}
           other cool things going about my day to day.
