@@ -6,6 +6,7 @@ import "./globals.css";
 
 const inter = Exo_2({ subsets: ["latin"] });
 const defaultOgImage = `${appLinks.baseLink}/favicon.ico`;
+
 export const metadata = {
   metadataBase: new URL(appLinks.baseLink),
   title: {

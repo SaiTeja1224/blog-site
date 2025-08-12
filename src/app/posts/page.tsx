@@ -3,17 +3,35 @@ import Loader from "@/components/Loader";
 import { Suspense } from "react";
 import { appLinks } from "@/lib/constants";
 
+const defaultOgImage = `${appLinks.baseLink}/favicon.ico`;
+
 export const metadata = {
   title: "Posts",
   description: "Posts on my thoughts and stuffs",
+  alternates: {
+    canonical: `${appLinks.baseLink}/posts`,
+  },
   openGraph: {
     title: "Sai Teja - Posts",
     description: "Posts on my thoughts and stuffs",
     url: `${appLinks.baseLink}/posts`,
+    siteName: "Sai Teja",
+    images: [
+      {
+        url: defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: "Sai Teja",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
+    card: "summary_large_image",
     title: "Sai Teja - Posts",
     description: "Posts on my thoughts and stuffs",
+    images: [defaultOgImage],
   },
 };
 
