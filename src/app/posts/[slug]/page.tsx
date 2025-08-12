@@ -8,13 +8,17 @@ import React from "react";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
-export async function generateMetadata({ params: { slug } }: { params: { slug: string } }) {
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
   const post = await getPostBySlug(slug);
 
   return {
     title: post.title,
-    description : post.excerpt
-  }
+    description: post.excerpt,
+  };
 }
 
 async function Post({ params: { slug } }: { params: { slug: string } }) {
@@ -46,7 +50,16 @@ async function Post({ params: { slug } }: { params: { slug: string } }) {
             alt="cover image for blog"
           />
         </section>
-        <Markdown rehypePlugins={[rehypeRaw]}>{post.content}</Markdown>
+        <Markdown
+          rehypePlugins={[rehypeRaw]}
+          components={{
+            a: ({ node, ...props }) => (
+              <a {...props} target="_blank" rel="noopener noreferrer" />
+            ),
+          }}
+        >
+          {post.content}
+        </Markdown>
         <footer className="prose dark:prose-invert prose-stone prose-lg max-w-full space-y-10">
           <CommonBox>
             <div className="flex flex-wrap md:flex-nowrap justify-between  items-start gap-7 p-5">
@@ -106,9 +119,9 @@ async function Post({ params: { slug } }: { params: { slug: string } }) {
                 my site.
               </p>
               <p>
-                I am a programmer, I like building, creating sites &
-                apps. This is one of my personal sites free to access, use it
-                however you&apos;d like to.
+                I am a programmer, I like building, creating sites & apps. This
+                is one of my personal sites free to access, use it however
+                you&apos;d like to.
               </p>
             </div>
           </CommonBox>
