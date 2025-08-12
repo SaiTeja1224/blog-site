@@ -20,7 +20,7 @@ export const metadata = {
   openGraph: {
     title: "Sai Teja – Developer & Creator",
     description:
-      "Frontend-focused full-stack developer sharing projects, tutorials, and insights about React, Next.js, and web development.",
+      "Full-stack developer sharing projects, tutorials, and insights about React, Next.js, and web development.",
     url: appLinks.baseLink,
     siteName: "Sai Teja",
     images: [
