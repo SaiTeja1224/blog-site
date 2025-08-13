@@ -9,7 +9,7 @@ function Logo() {
   return (
     <hgroup className="active:scale-95">
       <Link href={isPortfolio ? "/portfolio" : "/"}>
-        <h1 className="text-2xl leading-none font-bold">Sai Teja</h1>
+        <p className="text-2xl leading-none font-bold">Sai Teja</p>
         <p className="dark:text-accent text-accent-secondary">web dev</p>
       </Link>
     </hgroup>
