@@ -52,9 +52,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
-        <main className="h-full space-y-7">
+        <main className="h-full">
           <NavBar />
-          <section className="min-h-[80svh]">{children}</section>
+          <section className="min-h-[81svh] mt-5">{children}</section>
           <Footer />
         </main>
       </body>
